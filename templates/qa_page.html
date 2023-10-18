@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}
+    שאלות תשובות
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<style>
+    .qa-container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .qa-form {
+        margin: 20px 0;
+    }
+
+    .qa-form label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-align: right;
+    }
+
+    .qa-form select,
+    .qa-form input[type="text"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #f2f2f2;
+        width: 100%;
+    }
+
+    .qa-form button {
+        background-color: #6D3783;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .qa-form button:hover {
+        background-color: #4CAF50;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .answer-container {
+        margin-top: 40px;
+        display: none; /* hide the answer container by default */
+    }
+
+    .answer-label {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .answer-text {
+        font-size: 18px;
+    }
+
+    /* CSS for showing the answer container when there's an answer */
+    .answer-container.show {
+        display: block;
+    }
+</style>
+
+<div class="qa-container">
+    <h1>שאלי שאלה קבלי תשובה</h1>
+    <p>התשובות שלנו נועדו לספק מודעות לגבי המחלות שניתן לבחור. יש לשים לב שהתשובות שלנו אינן תחליף ליעוץ רפואי.</p>
+    <form class="qa-form" action="{{ url_for('qa_page') }}" method="post">
+        <label for="question">מה את רוצה לדעת</label>
+        <input type="text" name="question" id="question" required>
+        <button type="submit" class="btn btn-primary">תשובה</button>
+    </form>
+    <div class="answer-container{% if answer %} show{% endif %}">
+        <h3 class="answer-label">תשובה שלנו:</h3>
+        <p id="answer-text" class="answer-text"></p>
+    </div>
+
+
+    {% if link %}
+    <h4 style="font-weight: bold;">לקריאה נוספת:</h4>
+    <a id="link-text" class="answer-text" href="{{ link }}">{{ link }}</a>
+    {% endif %}
+
+</div>
+
+{% if answer %}
+<script>
+    const answerText = document.getElementById('answer-text');
+    const text = '{{ answer }}'+". " + "You can continue reading in the link above.";
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            answerText.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 30);
+        }
+    }
+
+    typeWriter();
+</script>
+{% endif %}
+{% endblock %}

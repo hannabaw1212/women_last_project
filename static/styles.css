@@ -1,0 +1,166 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #495057;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+hr {
+    border-top: 1px solid #dee2e6;
+    margin-bottom: 30px;
+}
+
+.plot-container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.plot {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .plot-container {
+        margin-bottom: 30px;
+    }
+
+    .google-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      
+      .google-form {
+        max-width: 100%;
+      }
+
+      .navbar-default {
+        background-color: #9b9b9b;
+        border-color: #9b9b9b;
+    }
+    
+    .navbar-default .navbar-brand,
+    .navbar-default .navbar-nav > li > a {
+        color: #ffffff;
+    }
+    
+    .navbar-default .navbar-brand:hover,
+    .navbar-default .navbar-brand:focus,
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+        color: #dddddd;
+    }
+    
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #ffffff;
+    }
+    
+    .navbar-default .navbar-toggle {
+        border-color: #ffffff;
+    }
+    
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+        background-color: #9b9b9b;
+    }
+    
+    
+
+
+
+    
+
+    .qa-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem;
+      }
+      
+      .qa-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 1rem;
+      }
+      
+      input[type="text"] {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      button[type="submit"] {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+      }
+      
+      .answer-container {
+        font-size: 1.2rem;
+      }
+      
+      .answer-label {
+        font-weight: bold;
+      }
+      
+      .answer-text {
+        margin-top: 0.5rem;
+      }
+
+
+      p {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        margin: 0 0 16px 0;
+    }
+    .navbar {
+    background-color: #333;
+    position: relative;
+    z-index: 1000;
+}
+
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+
+
+}

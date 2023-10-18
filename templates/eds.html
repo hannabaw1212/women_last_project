@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Eds page
+{% endblock %}
+
+
+{% block content %}
+<style>
+    .eds-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #f8f9fa;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    
+    .eds-container h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #495057;
+    }
+    
+    .eds-container hr {
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .eds-container p {
+        text-align: justify;
+        margin-bottom: 1rem;
+    }
+    
+    .eds-container .row {
+        margin-bottom: 1rem;
+    }
+    
+    .eds-container .plot {
+        width: 100%;
+        height: 400px;
+        border: none;
+    }
+</style>
+<div class="eds-container mt-5">
+    <h1>תסמונות אהלרס-דנלוס</h1>
+    <hr>
+    <p>
+        תסמונות אהלרס-דנלוס, Ehlers-Danlos) EDS) הן קבוצה של 13 תסמונות גנטיות, הגורמות לפגיעה ברקמות החיבור בגוף, כתוצאה מפגם במבנה, בייצור, או בעיבוד של קולגן - החלבון העיקרי המרכיב אותן. תפקידן העיקרי של רקמות החיבור הוא הענקת חוזק ויציבות לגוף. כמו כן הן שומרות על צורתם של איברים ומערכות.
+    </p>
+    <br>
+    <h2>תוצאות מניתוח שפה על התגובות בתחום ברפואי</h2>
+    <div class="row">
+        {% for url, description in plotly_dict.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br><hr><br>
+
+    <h2>תוצאות מניתוח שפה טבעית על תגובות הנשים שבודק מקורות מידע שנעשה בהם שימוש</h2>
+    <div class="row">
+        {% for url, description in plotly_mkorot_meda3.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br><hr><br>
+    <h2>תוצאות מניתוח שפה טבעית על תגובות הנשים שבודק את היחס שקיבלו הנשים מגורמים שונים</h2>
+    <div class="row">
+        {% for url, description in plotly_yakhas.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br><hr><br>
+    <h2>תוצאות מניתוח שפה טבעית על תגובות הנשים שבודק את המצב הכלכלי של הנשים כתוצאה מהמחלה</h2>
+    <div class="row">
+        {% for url, description in financal_ploly.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+
+    </div>
+</div>
+{% endblock %}

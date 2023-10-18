@@ -1,0 +1,134 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    פיברומיאלגיה
+{% endblock %}
+
+{% block content %}
+<style>
+    .fibromyalgia-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #f8f9fa;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    
+    .fibromyalgia-container h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #495057;
+    }
+    
+    .fibromyalgia-container hr {
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .fibromyalgia-container p {
+        text-align: justify;
+        margin-bottom: 1rem;
+    }
+    
+    .fibromyalgia-container .row {
+        margin-bottom: 1rem;
+    }
+    
+    .fibromyalgia-container .plot {
+        width: 100%;
+        height: 400px;
+        border: none;
+    }
+</style>
+<div class="fibromyalgia-container mt-5">
+    <h1>פיברומיאלגיה</h1>
+    <hr>
+    <p>
+        פיברומיאלגיה הוא מצב כאב כרוני שמאפיין בכאבים מפוזרים ברחבי הגוף, עייפות ורגישות בנקודות מסוימות בגוף. זהו מצב מסובך שאין עדיין תרופה יעילה לחלוטין לכאבים והתסמינים המתלווים. טיפולים שונים יכולים לעזור לשיפור הכאבים והתסמינים, כולל תרופות, שינוי בסגנון החיים וטיפולים נוספים.
+    </p>
+
+    <h2>תוצאות מניתוח שפה על התגובות בתחום ברפואי</h2>
+    <div class="row">
+        {% for url, description in medical_plotly.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+    <br><hr><br>
+
+
+    <h2>תוצאות מניתוח שפה טבעית על תגובות הנשים שבודק מקורות מידע שנעשה בהם שימוש</h2>
+    <div class="row">
+        {% for url, description in social_plotly.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+    <br><hr><br>
+
+
+    <h2>תוצאות מניתוח שפה טבעית על תגובות הנשים שבודק את היחס שקיבלו הנשים מגורמים שונים</h2>
+    <div class="row">
+        {% for url, description in social_plotly.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+    <br><hr><br>
+
+    <h2>תוצאות מניתוח שפה טבעית על תגובות הנשים שבודק את היחס שקיבלו הנשים מגורמים שונים</h2>
+    <div class="row">
+        {% for url, description in yakash_plotly.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+    <br><hr><br>
+
+    <h2>תוצאות מניתוח שפה טבעית על תגובות הנשים שבודק את המצב הכלכלי של הנשים כתוצאה מהמחלה</h2>
+    <div class="row">
+        {% for url, description in finan_plotly.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+    <br><hr><br>
+
+    <h2>תוצאות מניתוח על מידע כללי על הנשים שלנו</h2>
+    <div class="row">
+        {% for url, description in social_plotly_2.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+    <br><hr><br>
+    
+
+    <h2>ניתוח וסיווג רגשות של הנשים שלנו</h2>
+    <div class="row">
+        {% for url, description in emotions_plotly.items() %}
+            <div class="col-12">
+                <p style="text-align: right;"><b>{{ description }}</b></p>
+                <iframe class="plot" src="{{ url }}.embed"></iframe>
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+</div>
+{% endblock %}

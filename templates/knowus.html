@@ -1,0 +1,162 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+תכירו אותנו
+{% endblock %}
+
+{% block content %}
+<style>
+      body {
+        font-family: Arial, sans-serif;
+    }
+    
+    #div3 {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #title3 {
+        text-align: center;
+        color: #4a4a4a;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .group {
+        width: 100%;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        display: flex;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    /* p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.5;
+        left: 35%;
+    } */
+
+    /* img {
+        width: 130px;
+        height: 150px;
+        margin-right: 0px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        
+    } */
+
+    .rounded-image {
+    width: 130px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    padding: 0 10px;
+}
+
+.column.text {
+    width: 50%;
+}
+
+.column.image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .column {
+        width: 100%;
+    }
+}
+</style>
+<div id="div3">
+    <h3 id="title3">תכירו אותנו</h3>
+    <div class="group">
+        <div class="row">
+            <div class="column image">
+                <img src="static/valeria.png" alt="" class="rounded-image">
+            </div>
+            <div class="column text">
+                <h4>ולריה קרחמליוב</h4>
+                <p>סטודנטית בשנה האחרונה ללימודים במערכות מידע במסלול פיתוח באוניבסיטת חיפה</p>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="row">
+            <div class="column image">
+                <img src="static/alon.png" alt="" class="rounded-image">
+            </div>
+            <div class="column text">
+                <h4>אלון בן ארצי</h4>
+                <p>סטודנט בשנה האחרונה באוניברסיטת חיפה בחוג למערכות מידע - מסלול כללי</p>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="row">
+            <div class="column image">
+                <img src="person3-image-url" alt="" class="rounded-image"> 
+            </div>
+            <div class="column text">
+                <h4>ענת הורוביץ</h4>
+                <p>רכזת מיזם, אישה לא אישה לאישה. לענת יש לי אמא שחולה במחלת מנייר, שלא זכתה לקבל זכויות מעולם על רקע מחלתה, כבתה שמלווה אותה כבר 30 שנה, ענת מנסה לקדם את הנושא בהתנדבות. ענת היא אחת ממייסדות ושותפות במיזם מגדרי "נשים, בריאות וחיים בכבוד", שמטרתו לקדם את זכויותיהן הרפואיות וסוציאליות של נשים החולות במחלות שקופות ומשפחותיהן.</p>
+            </div>
+        </div>
+        </div>
+        <div class="group">
+            <div class="row">
+                <div class="column image">
+                    <img src="person4-image-url" alt="" class="rounded-image">
+                </div>
+                <div class="column text">
+                    <h4>צביה דעי</h4>
+                    <p>פעילה חברתית ממובילות המיזם "נשים בריאות וחיים בכבוד, שהקימה את קבוצת דרום של המיזם שעוסק בשיקום לחולי פיברומיאלגיה. צביה מנהלת כמה דפי וקבוצות פייסבוק של פיברומיאלגיה לתמיכה ולהעלאת מודעות. בנוסף צביה חולת בתסמונת התשישות הכרונית ובפיברומיאלגיה מבית הספר התיכון ומכאן עם ידע וניסיון בלהיות חולה ובהתמודדות עם שתי המחלות.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group">
+            <div class="row">
+                <div class="column image">
+                    <img src="static/pic1.png" alt="" class="rounded-image">
+                </div>
+                <div class="column text">
+                    <h4>ד"ר עופר מרקמן</h4>
+                    <p>יזם עם למעלה מ-20 שנות ניסיון בהובלת פרויקטים ושיתוף פעולה בתחום הרפואי, הכלכלי והחברתי. ד"ר מרקמן מתמחה בשיתוף פעולה בינלאומי ובפיתוח פרויקטים עם מגוון גורמים, כוללממשלות, ארגונים לא ממשלתיים, חברות ומחקר יישומי. במסגרת פעילותו בפרויקט "נשים, בריאות וחיים בכבוד", ד"ר מרקמן מקדם את המחקר והשיתוף פעולה בין מוסדות רפואיים וארגונים חברתיים בישראל ובעולם.</p>
+                </div>
+            </div>
+            </div>
+            
+            </div>
+            {% endblock %}
+        
+

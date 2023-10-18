@@ -1,0 +1,237 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+דף הבית 
+{% endblock %}
+
+
+{% block content %}
+<style>
+    .homepage #div1,
+    .homepage #div4 {
+        background-color: rgb(250, 232, 255);
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .homepage #div2 {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .homepage #title1,
+    .homepage #title2,
+    .homepage #title3,
+    .homepage #title4 {
+        text-align: center;
+    }
+    
+    .homepage .group {
+        border: 1px solid #ccc;
+        padding: 10px;
+        float: left;
+        width: 48%;
+        margin-right: 2%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    
+    .homepage .group:nth-child(2n+0) {
+        margin-right: 0;
+    }
+    
+    .homepage #div1 h1,
+    .homepage #div4 h2 {
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0.2, 0.3, 0.4, 0.7);
+    }
+    
+    .homepage #div2 #title2 {
+        text-shadow: 1px 1px 1px rgba(0.2, 0.3, 0.4, 0.7);
+    }
+    
+    .homepage .image-left {
+        max-width: 100%;
+        height: auto;
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .homepage #div2 p {
+        margin-left: 120px; /* adjust as needed */
+    }
+    
+    .homepage #div2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .homepage .image-container {
+        width: 50%;
+    }
+    
+    .homepage .text-container {
+        width: 45%;
+    }
+
+    .homepage #formButton{
+        background-color: #6D3783;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .homepage #formButton:hover{
+        background-color: #4CAF50;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    #awareness-button{
+        background-color: #6D3783;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    #awareness-button:hover{
+        background-color: #4CAF50;
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        text-align: right;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: left;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    /* @keyframes fadeIn{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    #title1{
+        animation: fadeIn 3s ease-in-out; */
+    /* } */
+    </style>
+    
+
+<div class="homepage">
+<div id="div1">
+<h1 id="title1" style="color : rgb(255, 255, 255)">נשים בריאות וחיים בכבוד</h1>
+<p>מחקר השוואתי הבוחן היבטים אישיים, רפואיים ומוסדיים בהתמודדות עם מחלות שקופות בקרב אוכלוסיית האנשים שסובלים מהן</p>
+<button id="awareness-button">הודעה חשובה!</button>
+<div id="awareness-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>יש לשים לב שהמידע שבאתר שלנו אינו תחליף לייעוץ רפואי אצל רופא מקצועי אלא נועד להעלאת המודעות במחלות השקופות.</p>
+    </div>
+</div>
+<script>
+    // Get the modal
+    var modal = document.getElementById("awareness-modal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("awareness-button");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</div>
+
+<div id="div2">
+    <div class="text-container">
+      <h2 id="title2" style="color:#6D3783">אודות הפרויקט</h2>
+      <p>אנחנו צוות של סטודנטים למערכות מידע שבמסגרת פרויקט סופי לתואר עובדים בשיתוף פעולה עם המיזם "נשים בריאות וחיים בכבוד".</p>
+      <p>אנחנו בונים מערכת שתאסוף נתונים ע"י שאלון הפונה לנשים בעיקר המתמודדות עם מחלות שקופות. הנתונים שנאספים יעברו עיבוד וניתוח סטטיסטי בשילוב של שיטות NLP (natural language processing) ואת תוצאות הממצאים נשתף באתר זה תוך שמירה על הפרטיות והאנונימיות של המשתתפות.</p>
+    </div>
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='pic1.png') }}" alt="image description" class="image-left">
+      </div>
+  </div>
+  
+
+
+<div id="div4">
+<h2 id="title4" style="color : rgb(255, 255, 255)">הינך מתמודדת עם מחלה שקופה ורוצה לקחת חלק בפרויקט?
+</h2>
+<p>אם גם את מתמודדת עם מחלה שקופה כלשהי את מוזמנת לקחת חלק ולענות על השאלון על מנת להיכנס לסטטיסטיקה ולהשפיע</p>
+<a href="{{ url_for('google_form') }}">
+    <button id="formButton">מעבר לשאלון</button>
+  </a></div>
+</div>
+{% endblock %}
