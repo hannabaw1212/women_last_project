@@ -25,5 +25,5 @@ env_variables:
 readiness_check:
   check_interval_sec: 30
   timeout_sec: 30
-  app_start_timeout_sec: 300
+  app_start_timeout_sec: 1600
 

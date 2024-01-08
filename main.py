@@ -12,6 +12,7 @@ import requests
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 from inforRet import google_custom_search
+from flask_ngrok import run_with_ngrok
 
 translator = Translator()
 import re
@@ -30,7 +31,6 @@ app.config['MAIL_PASSWORD'] = 'hjpycyovrwdkeane'
 
 app.secret_key = 'womenDiseaseHELP'
 mail = Mail(app)
-
 model_name = "t5-small"
 model = T5ForConditionalGeneration.from_pretrained(model_name)
 tokenizer = T5Tokenizer.from_pretrained(model_name)
@@ -178,7 +178,9 @@ def eds():
 def google_form():
     return render_template('google_form.html')
 
-
+@app.route('/google-form-arab')
+def google_form_arab():
+    return render_template('google_form_arab.html')
 
 
 @app.route('/qa_page', methods=['GET', 'POST'])
@@ -271,3 +273,5 @@ def stories():
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=8080, debug=True)
+
+run_with_ngrok(app)

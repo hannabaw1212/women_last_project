@@ -12,6 +12,7 @@ en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_
 filelock==3.12.2
 Flask==2.2.3
 Flask-Mail==0.9.1
+flask-ngrok==0.0.25
 fsspec==2023.1.0
 googletrans==4.0.0rc1
 gunicorn==20.1.0
@@ -31,7 +32,7 @@ langcodes==3.3.0
 MarkupSafe==2.1.2
 mpmath==1.3.0
 murmurhash==1.0.9
-networkx==2.6.3
+networkx== 2.6.3
 nltk==3.7
 numpy==1.21.6
 packaging==23.1
@@ -68,7 +69,7 @@ torchvision==0.14.1
 tqdm==4.65.0
 transformers==4.30.2
 typer==0.4.2
-urllib3<2.0
+typing_extensions==4.6.2
+urllib3==1.25.11
 wasabi==0.10.1
 Werkzeug==2.2.3
-typing-extensions==4.4.0
